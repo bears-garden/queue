@@ -1,10 +1,10 @@
 /**
  * Created by arthuranderson on 3/13/17.
  */
+import Queue from '../queue';
 
 describe("Queue", function(){
     "use strict";
-    let Queue = require("../lib/index");
 
     it("#ctor", function(){
         let q = new Queue();

@@ -1,8 +1,8 @@
-# bg-queue
+# @bears-garden/queue
 classic queue implementation
 
 ## Usage
-`var Queue = require("bg-queue");`  
+`var Queue = require("@bears-garden/queue");`  
 `let q = new Queue();`  
 ### enqueue
 @runtime O(1)  

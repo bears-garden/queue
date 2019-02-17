@@ -2,7 +2,7 @@
  * Created by arthuranderson on 3/13/17.
  */
 
-var Node = require("bg-double-node");
+var Node = require("@bears-garden/double-node");
 
 class Queue {
     constructor(){
@@ -10,6 +10,11 @@ class Queue {
         this.tail = null;
     }
 
+    /**
+     * enqueue - add data to the queue
+     * @param obj
+     * @returns {void} a new double node
+     */
     enqueue( obj ){
         if( this.head === null ){
             this.head = Node.insert( null, obj);
@@ -19,6 +24,10 @@ class Queue {
         }
     }
 
+    /**
+     * dequeue - removes next item
+     * @returns {object} data
+     */
     dequeue(){
         if( this.head === null ){
             return null;
@@ -30,7 +39,11 @@ class Queue {
         }
         return retval.data;
     }
-
+    
+    /**
+     * empty
+     * @returns {boolean} true if queue is empty
+     */
     empty(){
         return this.head === null;
     }

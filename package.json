@@ -1,19 +1,22 @@
 {
-  "name": "bg-queue",
-  "version": "0.1.0",
+  "name": "@bears-garden/queue",
+  "version": "1.0.0",
   "description": "classic Queue implementation",
   "main": "lib/index.js",
   "scripts": {
-    "build": "babel src -d lib",
-    "pretest": "npm run build",
-    "test": "jasmine"
+    "build": "babel src -d lib --ignore \"src/**/*.test.js\"",
+    "posttest": "npm run-script build",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "prepack": "npm run-script test",
+    "preversion": "npm run-script test"
   },
   "engines": {
-    "node": ">=7.4.0"
+    "node": ">=10.13.0"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bears-garden/bg-queue.git"
+    "url": "git+https://github.com/bears-garden/queue.git"
   },
   "keywords": [
     "queue",
@@ -22,15 +25,17 @@
   "author": "Arthur Anderson <arthur.anderson3@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bears-garden/bg-queue/issues"
+    "url": "https://github.com/bears-garden/queue/issues"
   },
-  "homepage": "https://github.com/bears-garden/bg-queue#readme",
+  "homepage": "https://github.com/bears-garden/queue#readme",
   "devDependencies": {
-    "babel-cli": "^6.24.0",
-    "babel-preset-env": "^1.2.1",
-    "jasmine": "^2.5.3"
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.3",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/register": "^7.0.0",
+    "jest": "^24.1.0"
   },
   "dependencies": {
-    "bg-double-node": "^0.1.0"
+    "@bears-garden/double-node": "^1.0.2"
   }
 }
